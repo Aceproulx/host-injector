@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # Host Header Injection Scanner
 # Author: Mike Masanga
 
@@ -15,6 +17,7 @@ init(autoreset=True)
 
 PINK = "\033[95m"
 RESET = "\033[0m"
+BLUE = "\033[94m"
 
 ascii_art = f"""
 {PINK}
@@ -144,7 +147,8 @@ def main():
                     if result:
                         print(f"{Fore.RED}[+] Possible HHI on {url}{Style.RESET_ALL}")
                         for r in result:
-                            print(f"    {Fore.YELLOW}Host: {r[0]} => Status: {r[1]} | Length: {r[2]}{Style.RESET_ALL}")
+                            print(f"{Fore.YELLOW}Host: {r[0]}{Style.RESET_ALL}")
+                            print(f"{Fore.BLUE}    => Status: {r[1]} | Length: {r[2]}{Style.RESET_ALL}")
 
                 except Exception as exc:
                     print(f"{Fore.MAGENTA}[-] Error scanning {url}: {exc}{Style.RESET_ALL}")
@@ -156,5 +160,3 @@ def main():
         sys.exit(1)
 if __name__ == "__main__":
     main()
-
-
