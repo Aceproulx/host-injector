@@ -114,6 +114,7 @@ def scan_url(url, collab):
     return results
 
 def main():
+    print(ascii_art)
     parser = argparse.ArgumentParser(description="Host Header Injection Scanner with Bypass Techniques")
     parser.add_argument("-u", help="Scan a single URL")
     parser.add_argument("-list", help="File with list of URLs to scan")
